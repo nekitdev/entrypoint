@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Discussion
+    about: Ask questions and discuss various aspects of the project.
+    url: https://github.com/nekitdev/entrypoint.py/discussions
+
+  - name: Discord
+    url: https://nekit.dev/discord
+    about: Use the official server for support and to ask questions.

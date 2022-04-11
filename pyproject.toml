@@ -1,0 +1,127 @@
+[tool.poetry]
+name = "entrypoint.py"
+version = "0.1.0"
+description = "Decorated functions as entry points."
+authors = ["nekitdev"]
+license = "MIT"
+
+readme = "README.md"
+
+# homepage = "https://github.com/nekitdev/entrypoint.py"
+repository = "https://github.com/nekitdev/entrypoint.py"
+# documentation = "https://entrypoint-py.readthedocs.io/"
+
+keywords = ["python", "entrypoint"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+include = ["CHANGELOG.md", "py.typed", "test_entrypoint.py", "track.py"]
+
+[tool.poetry.urls]
+Discord = "https://nekit.dev/discord"
+Funding = "https://patreon.com/nekitdev"
+Tracker = "https://github.com/nekitdev/entrypoint.py/issues"
+
+[[tool.poetry.packages]]
+include = "entrypoint.py"
+
+[tool.poetry.dependencies]
+python = ">= 3.7"
+
+[tool.poetry.dev-dependencies]
+black = "22.1.0"
+coverage = "6.1.1"
+flake8 = "4.0.1"
+flake8-bugbear = "21.9.2"
+flake8-isort = "4.1.1"
+flake8-string-format = "0.3.0"
+flake8-tidy-imports = "4.5.0"
+mypy = "0.910"
+pytest = "6.2.5"
+pytest-cov = "3.0.0"
+pytest-xdist = "2.5.0"
+typing-extensions = "4.0.0"
+
+[tool.black]
+line_length = 100
+
+[tool.isort]
+line_length = 100
+profile = "black"
+
+known_first_party = ["entrypoint", "track"]
+
+[tool.flake8]
+max_line_length = 100
+count = true
+
+[tool.coverage.run]
+source = ["entrypoint"]
+
+[tool.coverage.report]
+ignore_errors = true
+exclude_lines = [
+    "pragma: no cover",
+    "pragma: overload",
+    "pragma: protocol",
+    "pragma: unlikely",
+    "if TYPE_CHECKING",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]
+
+[tool.coverage.html]
+directory = "coverage"
+title = "Coverage"
+
+[tool.mypy]
+show_column_numbers = true
+
+disallow_any_decorated = true
+disallow_any_generics = true
+warn_return_any = true
+
+no_implicit_optional = true
+strict_optional = true
+
+strict_equality = true
+
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_untyped_decorators = true
+
+disallow_incomplete_defs = true
+
+warn_no_return = true
+
+warn_redundant_casts = true
+warn_unused_ignores = false  # compatibility
+
+[tool.changelog]
+name = "entrypoint.py"
+version = "0.1.0"
+url = "https://github.com/nekitdev/entrypoint.py"
+directory = "changes"
+output = "CHANGELOG.md"
+
+start_string = "<!-- changelog: start -->"
+
+title_format = "{name} {version} ({date})"
+issue_format = "[#{issue}]({url}/issues/{issue})"
+
+bullet = "-"
+wrap = true
+wrap_size = 100
+
+display = ["feature", "change", "fix", "security", "deprecation", "removal", "internal"]
+
+[build-system]
+requires = ["poetry-core >= 1.0.0"]
+build-backend = "poetry.core.masonry.api"
