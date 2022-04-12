@@ -1,0 +1,14 @@
+codecov:
+  branch: main
+
+coverage:
+  range: 90..100
+
+  # status:
+  #   patch:
+  #     default:
+  #       target: auto
+
+  #   project:
+  #     default:
+  #       target: auto

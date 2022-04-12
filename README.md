@@ -4,13 +4,11 @@
 [![Version][Version Badge]][Package]
 [![Downloads][Downloads Badge]][Package]
 [![Discord][Discord Badge]][Discord]
-
+[![Tests][Tests Badge]][Actions]
+[![Coverage][Coverage Badge]][Coverage]
 <!--
 [![Documentation][Documentation Badge]][Documentation]
 -->
-[![Build][Build Badge]][Actions]
-[![Tests][Tests Badge]][Actions]
-[![Coverage][Coverage Badge]][Coverage]
 
 **Decorated functions as entry points.**
 
@@ -173,7 +171,5 @@ If you are interested in contributing to the project, please make sure to take a
 
 [Documentation Badge]: https://readthedocs.org/projects/entrypoint-py/badge
 
-[Build Badge]: https://github.com/nekitdev/entrypoint.py/actions/workflows/build.yml/badge.svg
 [Tests Badge]: https://github.com/nekitdev/entrypoint.py/actions/workflows/tests.yml/badge.svg
-
 [Coverage Badge]: https://codecov.io/github/nekitdev/entrypoint.py/branch/main/graph/badge.svg
