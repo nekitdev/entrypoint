@@ -1,4 +1,20 @@
 name: tests
 
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - "**"
+
 # coverage, pytest
 # flake8, mypy?
+
+jobs:
+  tests:
+    name: Nothing
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
