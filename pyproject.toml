@@ -35,7 +35,7 @@ include = "entrypoint.py"
 python = ">= 3.7"
 
 [tool.poetry.dev-dependencies]
-black = "22.1.0"
+black = "22.3.0"
 coverage = "6.3.2"
 flake8 = "4.0.1"
 flake8-bugbear = "22.3.23"
