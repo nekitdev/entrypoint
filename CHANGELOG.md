@@ -2,6 +2,10 @@
 
 <!-- changelog: start -->
 
+## entrypoint.py 0.1.2 (2022-04-17)
+
+No significant changes.
+
 ## entrypoint.py 0.1.1 (2022-04-11)
 
 No significant changes.

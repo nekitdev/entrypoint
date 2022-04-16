@@ -67,7 +67,7 @@ Or directly specifying it in the configuration:
 
 ```toml
 [tool.poetry.dependencies."entrypoint.py"]
-version = "^0.1.1"
+version = "^0.1.2"
 ```
 
 Alternatively, the latest version can be included, installing from source:
@@ -172,4 +172,4 @@ If you are interested in contributing to the project, please make sure to take a
 [Documentation Badge]: https://readthedocs.org/projects/entrypoint-py/badge
 
 [Tests Badge]: https://github.com/nekitdev/entrypoint.py/actions/workflows/tests.yml/badge.svg
-[Coverage Badge]: https://codecov.io/github/nekitdev/entrypoint.py/branch/main/graph/badge.svg
+[Coverage Badge]: https://codecov.io/gh/nekitdev/entrypoint.py/branch/main/graph/badge.svg

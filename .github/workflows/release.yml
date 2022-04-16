@@ -31,10 +31,10 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/*"
-          token: ${{ secrets.GITHUB_TOKEN }}
           draft: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to PyPI
+        run: poetry publish
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
-        run: poetry publish
