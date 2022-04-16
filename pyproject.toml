@@ -46,7 +46,7 @@ mypy = "0.910"
 pytest = "6.2.5"
 pytest-cov = "3.0.0"
 pytest-xdist = "2.5.0"
-typing-extensions = "4.0.0"
+typing-extensions = "4.1.1"
 
 [tool.black]
 line_length = 100
