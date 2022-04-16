@@ -157,10 +157,11 @@ If you are interested in contributing to the project, please make sure to take a
 [Changelog]: https://github.com/nekitdev/entrypoint.py/blob/main/CHANGELOG.md
 [Code of Conduct]: https://github.com/nekitdev/entrypoint.py/blob/main/CODE_OF_CONDUCT.md
 [Contributing Guide]: https://github.com/nekitdev/entrypoint.py/blob/main/CONTRIBUTING.md
+[Security]: https://github.com/nekitdev/entrypoint.py/blob/main/SECURITY.md
 
 [License]: https://github.com/nekitdev/entrypoint.py/blob/main/LICENSE
 [Package]: https://pypi.org/project/entrypoint.py
-[Coverage]: https://codecov.io/github/nekitdev/entrypoint.py
+[Coverage]: https://codecov.io/gh/nekitdev/entrypoint.py
 
 [Documentation]: https://entrypoint-py.readthedocs.io/
 
@@ -171,5 +172,5 @@ If you are interested in contributing to the project, please make sure to take a
 
 [Documentation Badge]: https://readthedocs.org/projects/entrypoint-py/badge
 
-[Tests Badge]: https://github.com/nekitdev/entrypoint.py/actions/workflows/tests.yml/badge.svg
+[Tests Badge]: https://github.com/nekitdev/entrypoint.py/workflows/tests/badge.svg
 [Coverage Badge]: https://codecov.io/gh/nekitdev/entrypoint.py/branch/main/graph/badge.svg
