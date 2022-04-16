@@ -21,7 +21,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-include = ["CHANGELOG.md", "py.typed", "test_entrypoint.py", "track.py"]
+include = ["CHANGELOG.md", "py.typed", "tests"]
 
 [tool.poetry.urls]
 Discord = "https://nekit.dev/discord"
@@ -55,11 +55,13 @@ line_length = 100
 line_length = 100
 profile = "black"
 
-known_first_party = ["entrypoint", "track"]
-
 [tool.flake8]
 max_line_length = 100
 count = true
+
+[tool.pytest.ini_options]
+addopts = "--cov entrypoint"
+testpaths = ["tests"]
 
 [tool.coverage.run]
 source = ["entrypoint"]

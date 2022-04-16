@@ -1,5 +1,5 @@
 from entrypoint import entrypoint, is_main
-from track import track
+from tests.track import track
 
 MAIN = "__main__"
 TEST = "__test__"

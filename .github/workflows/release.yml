@@ -22,7 +22,7 @@ jobs:
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Install Poetry
-        run: pip install poetry
+        run: curl -sSL https://install.python-poetry.org/ | python -
 
       - name: Build
         run: poetry build
