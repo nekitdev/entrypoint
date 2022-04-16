@@ -28,7 +28,7 @@ __url__ = "https://github.com/nekitdev/entrypoint.py"
 __title__ = "entrypoint"
 __author__ = "nekitdev"
 __license__ = "MIT"
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 from typing import Any, Callable, Type, TypeVar, overload
 
