@@ -6,7 +6,7 @@
 
 ### Internal
 
-- Migrate from module to library layout. ([#9](https://github.com/nekitdev/entrypoint.py/issues/9))
+- Migrate from module to library layout. ([#9](https://github.com/nekitdev/entrypoint.py/pull/9))
 
 ## entrypoint.py 0.1.3 (2022-04-17)
 
