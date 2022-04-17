@@ -1,38 +1,6 @@
-"""Decorated functions as entry points.
-
-# Example
-
-```python
-# file.py
-from entrypoint import entrypoint
-
-@entrypoint(__name__)
-def main() -> None:
-    print("Hello, world!")
-```
-
-```python
->>> import file
->>> # no output
-```
-
-```console
-$ python file.py
-Hello, world!
-```
-"""
-
-__description__ = "Decorated functions as entry points."
-__url__ = "https://github.com/nekitdev/entrypoint.py"
-
-__title__ = "entrypoint"
-__author__ = "nekitdev"
-__license__ = "MIT"
-__version__ = "0.1.3"
-
 from typing import Any, Callable, Type, TypeVar, overload
 
-__all__ = ("MAIN", "EntryPoint", "entrypoint", "is_main")
+__all__ = ("EntryPoint", "entrypoint", "is_main")
 
 R = TypeVar("R")
 
@@ -45,6 +13,7 @@ MAIN = "__main__"
 
 
 def is_main(name: str) -> bool:
+    """Checks if `name` equals `__main__`."""
     return name == MAIN
 
 
@@ -88,6 +57,6 @@ def entrypoint(name: str, entrypoint_type: Type[Any] = EntryPoint) -> Any:
 
     Instead of applying dark magic, this function expects
     callers to pass the `__name__` variable as an argument,
-    and merely checks it against `__main__`.
+    and merely checks it against `__main__` when needed.
     """
     return entrypoint_type(name)
