@@ -67,7 +67,7 @@ Or directly specifying it in the configuration:
 
 ```toml
 [tool.poetry.dependencies."entrypoint.py"]
-version = "^0.1.2"
+version = "^0.2.0"
 ```
 
 Alternatively, the latest version can be included, installing from source:
