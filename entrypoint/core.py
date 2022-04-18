@@ -1,6 +1,6 @@
 from typing import Any, Callable, Type, TypeVar, overload
 
-__all__ = ("EntryPoint", "entrypoint", "is_main")
+__all__ = ("MAIN", "EntryPoint", "entrypoint", "is_main")
 
 R = TypeVar("R")
 

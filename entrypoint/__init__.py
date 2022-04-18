@@ -30,6 +30,6 @@ __author__ = "nekitdev"
 __license__ = "MIT"
 __version__ = "0.2.0"
 
-from entrypoint.core import EntryPoint, entrypoint, is_main
+from entrypoint.core import MAIN, EntryPoint, entrypoint, is_main
 
-__all__ = ("EntryPoint", "entrypoint", "is_main")
+__all__ = ("MAIN", "EntryPoint", "entrypoint", "is_main")
