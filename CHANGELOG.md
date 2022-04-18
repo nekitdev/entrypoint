@@ -13,7 +13,7 @@
   ```
 
   `MAIN` can be used to ensure *entry points* will always get called.
-  ([#11](https://github.com/nekitdev/entrypoint.py/issues/11))
+  ([#11](https://github.com/nekitdev/entrypoint.py/pull/11))
 
 ## entrypoint.py 0.2.0 (2022-04-17)
 
