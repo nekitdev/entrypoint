@@ -26,7 +26,7 @@ include = ["CHANGELOG.md", "tests", "entrypoint/py.typed"]
 [tool.poetry.urls]
 Discord = "https://nekit.dev/discord"
 Funding = "https://patreon.com/nekitdev"
-Tracker = "https://github.com/nekitdev/entrypoint.py/issues"
+Issues = "https://github.com/nekitdev/entrypoint.py/issues"
 
 [[tool.poetry.packages]]
 include = "entrypoint"
