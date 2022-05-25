@@ -42,12 +42,12 @@ EP = TypeVar("EP", bound=EntryPoint)
 
 @overload
 def entrypoint(name: str) -> EntryPoint:
-    ...  # pragma: overload
+    ...
 
 
 @overload
 def entrypoint(name: str, entrypoint_type: Type[EP]) -> EP:
-    ...  # pragma: overload
+    ...
 
 
 def entrypoint(name: str, entrypoint_type: Type[Any] = EntryPoint) -> Any:
