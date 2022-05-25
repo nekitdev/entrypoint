@@ -4,36 +4,38 @@
 [![Version][Version Badge]][Package]
 [![Downloads][Downloads Badge]][Package]
 [![Discord][Discord Badge]][Discord]
-[![Tests][Tests Badge]][Actions]
-[![Coverage][Coverage Badge]][Coverage]
 <!--
 [![Documentation][Documentation Badge]][Documentation]
 -->
+[![Check][Check Badge]][Actions]
+[![Test][Test Badge]][Actions]
+[![Coverage][Coverage Badge]][Coverage]
 
 **Decorated functions as entry points.**
 
 In python, an *entry point* can be thought of as an explicit function
 that gets called when the script is run directly from the console.
 
-Defining an entry point requires some boilerplate code, which is abstracted away by this library.
+Defining an entry point requires some boilerplate code, which is
+abstracted away by this library.
 
 ## Table of Contents
 
+- [Installing](#installing)
+  - [pip](#pip)
+  - [poetry](#poetry)
+- [Examples](#examples)
+  - [Decorated](#decorated)
+  - [Note](#note)
+  - [Direct](#direct)
+  - [Check](#check)
 <!--
 - [Documentation](#documenation)
 -->
-- [Installing](#installing)
-    - [pip](#pip)
-    - [poetry](#poetry)
-- [Examples](#examples)
-    - [Decorated](#decorated)
-    - [Direct](#direct)
-    - [Check](#check)
 - [Changelog](#changelog)
 - [Support](#support)
-<!--
 - [Contributing](#contributing)
--->
+- [License](#license)
 
 ## Installing
 
@@ -105,7 +107,23 @@ When importing the module, `main` does not get called:
 >>> # no output
 ```
 
-Note that `main` gets called **immediately, before any code below can be executed**.
+### Note
+
+Note that `main` gets called **immediately, before any code below can be executed**:
+
+```python
+@entrypoint(__name__)
+def main() -> None:
+    print("-> in main")
+
+print("<- outside")
+```
+
+```console
+$ python note.py
+-> in main
+<- outside
+```
 
 ### Direct
 
@@ -134,22 +152,25 @@ if is_main(__name__):
 Documentation is located [here][Documentation].
 -->
 
+## Support
+
+Please send an [email][Email] or refer to the official [Discord server][Discord] for support.
+
 ## Changelog
 
 Changelog can be found [here][Changelog].
 
-## Support
-
-Please refer to the [Discord Server][Discord] for support or send an [email][Email].
-
-<!--
 ## Contributing
 
-If you are interested in contributing to the project, please make sure to take a look at the
+If you are interested in contributing to `entrypoint.py`, make sure to take a look at the
 [Contributing Guide][Contributing Guide], as well as the [Code of Conduct][Code of Conduct].
--->
 
-[Email]: mailto:support@nekit.dev?subject=entrypoint.py
+## License
+
+`entrypoint.py` is licensed under the MIT License terms. See [License][License] for details.
+
+[Email]: mailto:support@nekit.dev
+
 [Discord]: https://nekit.dev/discord
 
 [Actions]: https://github.com/nekitdev/entrypoint.py/actions
@@ -160,9 +181,9 @@ If you are interested in contributing to the project, please make sure to take a
 [Security]: https://github.com/nekitdev/entrypoint.py/blob/main/SECURITY.md
 
 [License]: https://github.com/nekitdev/entrypoint.py/blob/main/LICENSE
+
 [Package]: https://pypi.org/project/entrypoint.py
 [Coverage]: https://codecov.io/gh/nekitdev/entrypoint.py
-
 [Documentation]: https://entrypoint-py.readthedocs.io/
 
 [Discord Badge]: https://img.shields.io/badge/chat-discord-5865f2
@@ -172,5 +193,6 @@ If you are interested in contributing to the project, please make sure to take a
 
 [Documentation Badge]: https://readthedocs.org/projects/entrypoint-py/badge
 
-[Tests Badge]: https://github.com/nekitdev/entrypoint.py/workflows/tests/badge.svg
+[Check Badge]: https://github.com/nekitdev/entrypoint.py/workflows/check/badge.svg
+[Test Badge]: https://github.com/nekitdev/entrypoint.py/workflows/test/badge.svg
 [Coverage Badge]: https://codecov.io/gh/nekitdev/entrypoint.py/branch/main/graph/badge.svg
