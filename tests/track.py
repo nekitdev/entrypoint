@@ -1,18 +1,20 @@
 from __future__ import annotations
 
 from types import TracebackType as Traceback
-from typing import Callable, Generic, Optional, Type, TypeVar
+from typing import Any, Callable, Generic, Optional, Type, TypeVar
 
-from typing_extensions import ParamSpec, Self
+from typing_extensions import ParamSpec, TypeAlias
 
 __all__ = ("Track", "track")
 
-AnyException = BaseException
+AnyException: TypeAlias = BaseException
 
 E = TypeVar("E", bound=AnyException)
 
 P = ParamSpec("P")
 R = TypeVar("R")
+
+T = TypeVar("T", bound="Track[Any, Any]")
 
 
 class Track(Generic[P, R]):
@@ -36,6 +38,12 @@ class Track(Generic[P, R]):
     def called(self) -> bool:
         return self.count > 0
 
+    def called_once(self) -> bool:
+        return self.count == 1
+
+    def not_called(self) -> bool:
+        return not self.called()
+
     def increment(self) -> None:
         self._count += 1
 
@@ -53,7 +61,7 @@ class Track(Generic[P, R]):
 
         return self.function(*args, **kwargs)
 
-    def __enter__(self) -> Self:
+    def __enter__(self: T) -> T:
         self.save()
 
         return self

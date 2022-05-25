@@ -22,11 +22,11 @@ def test_call() -> None:
     with track(main) as tracked:
         entrypoint_call(tracked)
 
-        assert tracked.called()
+        assert tracked.called_once()
 
 
 def test_no_call() -> None:
     with track(main) as tracked:
         entrypoint_no_call(tracked)
 
-        assert not tracked.called()
+        assert tracked.not_called()
