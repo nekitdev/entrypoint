@@ -1,4 +1,4 @@
-name: tests
+name: check
 
 on:
   push:
@@ -9,20 +9,18 @@ on:
     branches:
       - "**"
 
-# flake8, mypy?
-
 jobs:
-  tests:
-    name: Tests
+  check:
+    name: Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.9
+      - name: Setup Python 3.10
         uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: 3.10
 
       - name: Update PATH
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
@@ -30,14 +28,14 @@ jobs:
       - name: Install Poetry
         run: curl -sSL https://install.python-poetry.org/ | python -
 
+      - name: Update Poetry
+        run: poetry self update --preview
+
       - name: Configure Poetry
         run: poetry config virtualenvs.in-project true
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --with check
 
-      - name: Run tests
-        run: poetry run pytest --cov-report xml
-
-      - name: Upload coverage
-        uses: codecov/codecov-action@v3
+      - name: Run type checks
+        run: poetry run mypy .
