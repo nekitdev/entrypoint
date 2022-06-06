@@ -27,6 +27,9 @@ jobs:
       - name: Update Poetry
         run: poetry self update --preview
 
+      - name: Configure Poetry
+        run: poetry config virtualenvs.in-project true
+
       - name: Build
         run: poetry build
 
