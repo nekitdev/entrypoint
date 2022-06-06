@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "entrypoint.py"
-version = "0.3.1"
+version = "1.0.0"
 description = "Decorated functions as entry points."
 authors = ["nekitdev"]
 license = "MIT"
@@ -14,7 +14,7 @@ repository = "https://github.com/nekitdev/entrypoint.py"
 keywords = ["python", "entrypoint"]
 
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Stable",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
     "Topic :: Utilities",
@@ -115,7 +115,7 @@ warn_unused_ignores = false  # compatibility
 
 [tool.changelog]
 name = "entrypoint.py"
-version = "0.3.1"
+version = "1.0.0"
 url = "https://github.com/nekitdev/entrypoint.py"
 directory = "changes"
 output = "CHANGELOG.md"

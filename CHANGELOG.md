@@ -2,6 +2,10 @@
 
 <!-- changelog: start -->
 
+## 1.0.0 (2022-06-06)
+
+Initial stable release.
+
 ## 0.3.1 (2022-05-25)
 
 No significant changes.
