@@ -14,7 +14,7 @@ repository = "https://github.com/nekitdev/entrypoint.py"
 keywords = ["python", "entrypoint"]
 
 classifiers = [
-    "Development Status :: 5 - Stable",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
     "Topic :: Utilities",
