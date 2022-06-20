@@ -29,6 +29,7 @@ abstracted away by this library.
   - [Note](#note)
   - [Direct](#direct)
   - [Check](#check)
+  - [Async](#async)
 <!--
 - [Documentation](#documenation)
 -->
@@ -145,6 +146,23 @@ from entrypoint import is_main
 
 if is_main(__name__):
     print("Hello, world!")
+```
+
+### Async
+
+`entrypoint.py` does not provide any specific functionality to run async functions.
+
+Instead, you can specify, for example, a `main` function that runs its `async_main` counterpart:
+
+```python
+import asyncio
+
+async def async_main() -> None:
+    print("Hello, world!")
+
+@entrypoint(__name__)
+def main() -> None:
+    asyncio.run(async_main())
 ```
 
 <!--
