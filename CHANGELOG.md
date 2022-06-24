@@ -2,6 +2,10 @@
 
 <!-- changelog: start -->
 
+## 1.2.1 (2022-06-25)
+
+No significant changes.
+
 ## 1.2.0 (2022-06-25)
 
 ### Changes
