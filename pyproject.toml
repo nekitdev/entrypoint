@@ -7,9 +7,9 @@ license = "MIT"
 
 readme = "README.md"
 
-# homepage = "https://github.com/nekitdev/entrypoint.py"
+homepage = "https://github.com/nekitdev/entrypoint.py"
 repository = "https://github.com/nekitdev/entrypoint.py"
-# documentation = "https://entrypoint-py.readthedocs.io/"
+documentation = "https://nekitdev.github.io/entrypoint.py"
 
 keywords = ["python", "entrypoint"]
 
