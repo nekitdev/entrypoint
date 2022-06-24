@@ -6,7 +6,7 @@
 
 ### Changes
 
-- `entrypoint.py -> entrypoint` migration. ([#20](https://github.com/nekitdev/entrypoint/pulls/20))
+- `entrypoint.py -> entrypoint` migration. ([#20](https://github.com/nekitdev/entrypoint/pull/20))
 
 ## 1.1.2 (2022-06-24)
 
