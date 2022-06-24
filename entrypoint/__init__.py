@@ -23,7 +23,7 @@ Hello, world!
 """
 
 __description__ = "Decorated functions as entry points."
-__url__ = "https://github.com/nekitdev/entrypoint.py"
+__url__ = "https://github.com/nekitdev/entrypoint"
 
 __title__ = "entrypoint"
 __author__ = "nekitdev"

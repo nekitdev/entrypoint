@@ -1,4 +1,4 @@
-# entrypoint.py
+# entrypoint
 
 [![License][License Badge]][License]
 [![Version][Version Badge]][Package]
@@ -27,37 +27,37 @@ abstracted away by this library.
 Installing with `pip` is quite simple:
 
 ```console
-$ pip install entrypoint.py
+$ pip install entrypoint
 ```
 
 Alternatively, the library can be installed from source:
 
 ```console
-$ git clone https://github.com/nekitdev/entrypoint.py.git
-$ cd entrypoint.py
+$ git clone https://github.com/nekitdev/entrypoint.git
+$ cd entrypoint
 $ python -m pip install .
 ```
 
 ### poetry
 
-Adding `entrypoint.py` to dependencies:
+Adding `entrypoint` to dependencies:
 
 ```console
-$ poetry add entrypoint.py
+$ poetry add entrypoint
 ```
 
 Or directly specifying it in the configuration:
 
 ```toml
-[tool.poetry.dependencies."entrypoint.py"]
-version = "^1.1.2"
+[tool.poetry.dependencies]
+entrypoint = "^1.1.2"
 ```
 
 Alternatively, the latest version can be included, installing from source:
 
 ```toml
-[tool.poetry.dependencies."entrypoint.py"]
-git = "https://github.com/nekitdev/entrypoint.py.git"
+[tool.poetry.dependencies.entrypoint]
+git = "https://github.com/nekitdev/entrypoint.git"
 ```
 
 ## Examples
@@ -130,7 +130,7 @@ if is_main(__name__):
 
 ### Async
 
-`entrypoint.py` does not provide any specific functionality to run async functions.
+`entrypoint` does not provide any specific functionality to run async functions.
 
 Instead, you can specify, for example, a `main` function that runs its `async_main` counterpart:
 
@@ -159,37 +159,37 @@ Changelog can be found [here][Changelog].
 
 ## Contributing
 
-If you are interested in contributing to `entrypoint.py`, make sure to take a look at the
+If you are interested in contributing to `entrypoint`, make sure to take a look at the
 [Contributing Guide][Contributing Guide], as well as the [Code of Conduct][Code of Conduct].
 
 ## License
 
-`entrypoint.py` is licensed under the MIT License terms. See [License][License] for details.
+`entrypoint` is licensed under the MIT License terms. See [License][License] for details.
 
 [Email]: mailto:support@nekit.dev
 
 [Discord]: https://nekit.dev/discord
 
-[Actions]: https://github.com/nekitdev/entrypoint.py/actions
+[Actions]: https://github.com/nekitdev/entrypoint/actions
 
-[Changelog]: https://github.com/nekitdev/entrypoint.py/blob/main/CHANGELOG.md
-[Code of Conduct]: https://github.com/nekitdev/entrypoint.py/blob/main/CODE_OF_CONDUCT.md
-[Contributing Guide]: https://github.com/nekitdev/entrypoint.py/blob/main/CONTRIBUTING.md
-[Security]: https://github.com/nekitdev/entrypoint.py/blob/main/SECURITY.md
+[Changelog]: https://github.com/nekitdev/entrypoint/blob/main/CHANGELOG.md
+[Code of Conduct]: https://github.com/nekitdev/entrypoint/blob/main/CODE_OF_CONDUCT.md
+[Contributing Guide]: https://github.com/nekitdev/entrypoint/blob/main/CONTRIBUTING.md
+[Security]: https://github.com/nekitdev/entrypoint/blob/main/SECURITY.md
 
-[License]: https://github.com/nekitdev/entrypoint.py/blob/main/LICENSE
+[License]: https://github.com/nekitdev/entrypoint/blob/main/LICENSE
 
-[Package]: https://pypi.org/project/entrypoint.py
-[Coverage]: https://codecov.io/gh/nekitdev/entrypoint.py
-[Documentation]: https://nekitdev.github.io/entrypoint.py
+[Package]: https://pypi.org/project/entrypoint
+[Coverage]: https://codecov.io/gh/nekitdev/entrypoint
+[Documentation]: https://nekitdev.github.io/entrypoint
 
 [Discord Badge]: https://img.shields.io/badge/chat-discord-5865f2
-[License Badge]: https://img.shields.io/pypi/l/entrypoint.py
-[Version Badge]: https://img.shields.io/pypi/v/entrypoint.py
-[Downloads Badge]: https://img.shields.io/pypi/dm/entrypoint.py
+[License Badge]: https://img.shields.io/pypi/l/entrypoint
+[Version Badge]: https://img.shields.io/pypi/v/entrypoint
+[Downloads Badge]: https://img.shields.io/pypi/dm/entrypoint
 
 [Documentation Badge]: https://img.shields.io/badge/docs-material-blue
 
-[Check Badge]: https://github.com/nekitdev/entrypoint.py/workflows/check/badge.svg
-[Test Badge]: https://github.com/nekitdev/entrypoint.py/workflows/test/badge.svg
-[Coverage Badge]: https://codecov.io/gh/nekitdev/entrypoint.py/branch/main/graph/badge.svg
+[Check Badge]: https://github.com/nekitdev/entrypoint/workflows/check/badge.svg
+[Test Badge]: https://github.com/nekitdev/entrypoint/workflows/test/badge.svg
+[Coverage Badge]: https://codecov.io/gh/nekitdev/entrypoint/branch/main/graph/badge.svg
