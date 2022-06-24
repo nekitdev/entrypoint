@@ -4,9 +4,8 @@
 [![Version][Version Badge]][Package]
 [![Downloads][Downloads Badge]][Package]
 [![Discord][Discord Badge]][Discord]
-<!--
+
 [![Documentation][Documentation Badge]][Documentation]
--->
 [![Check][Check Badge]][Actions]
 [![Test][Test Badge]][Actions]
 [![Coverage][Coverage Badge]][Coverage]
@@ -18,25 +17,6 @@ that gets called when the script is run directly from the console.
 
 Defining an entry point requires some boilerplate code, which is
 abstracted away by this library.
-
-## Table of Contents
-
-- [Installing](#installing)
-  - [pip](#pip)
-  - [poetry](#poetry)
-- [Examples](#examples)
-  - [Decorated](#decorated)
-  - [Note](#note)
-  - [Direct](#direct)
-  - [Check](#check)
-  - [Async](#async)
-<!--
-- [Documentation](#documenation)
--->
-- [Changelog](#changelog)
-- [Support](#support)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installing
 
@@ -165,10 +145,9 @@ def main() -> None:
     asyncio.run(async_main())
 ```
 
-<!--
 ## Documentation
+
 Documentation is located [here][Documentation].
--->
 
 ## Support
 
@@ -202,14 +181,14 @@ If you are interested in contributing to `entrypoint.py`, make sure to take a lo
 
 [Package]: https://pypi.org/project/entrypoint.py
 [Coverage]: https://codecov.io/gh/nekitdev/entrypoint.py
-[Documentation]: https://entrypoint-py.readthedocs.io/
+[Documentation]: https://nekitdev.github.io/entrypoint.py
 
 [Discord Badge]: https://img.shields.io/badge/chat-discord-5865f2
 [License Badge]: https://img.shields.io/pypi/l/entrypoint.py
 [Version Badge]: https://img.shields.io/pypi/v/entrypoint.py
 [Downloads Badge]: https://img.shields.io/pypi/dm/entrypoint.py
 
-[Documentation Badge]: https://readthedocs.org/projects/entrypoint-py/badge
+[Documentation Badge]: https://img.shields.io/badge/docs-material-blue
 
 [Check Badge]: https://github.com/nekitdev/entrypoint.py/workflows/check/badge.svg
 [Test Badge]: https://github.com/nekitdev/entrypoint.py/workflows/test/badge.svg

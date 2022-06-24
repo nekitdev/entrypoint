@@ -18,7 +18,7 @@ def is_main(name: str) -> bool:
 
 
 class EntryPoint:
-    """Actual implementation of `@entrypoint` decorators."""
+    """Handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators."""
 
     def __init__(self, name: str) -> None:
         self._name = name
@@ -50,7 +50,9 @@ def entrypoint(name: str, entrypoint_type: Type[EP]) -> EP:
     ...
 
 
-def entrypoint(name: str, entrypoint_type: Type[Any] = EntryPoint) -> Any:
+def entrypoint(
+    name: str, entrypoint_type: Type[EntryPoint] = EntryPoint
+) -> EntryPoint:
     """Defines decorated functions as entry points.
 
     Calls the wrapped function if the module gets run directly.
@@ -58,5 +60,16 @@ def entrypoint(name: str, entrypoint_type: Type[Any] = EntryPoint) -> Any:
     Instead of applying dark magic, this function expects
     callers to pass the `__name__` variable as an argument,
     and merely checks it against `__main__` when needed.
+
+    `entrypoint_type(name)` is created under the hood, and is
+    then used to handle calls.
+
+    Args:
+        name: `__name__` of the module
+        entrypoint_type: [`EntryPoint`][entrypoint.core.EntryPoint]
+            type that is used to handle calls.
+
+    Returns:
+        An [`EntryPoint`][entrypoint.core.EntryPoint] instance.
     """
     return entrypoint_type(name)
