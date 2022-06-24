@@ -1,4 +1,4 @@
-# entrypoint.py
+# entrypoint
 
 <!-- changelog: start -->
 
@@ -39,13 +39,13 @@ No significant changes.
   ```
 
   `MAIN` can be used to ensure *entry points* will always get called.
-  ([#11](https://github.com/nekitdev/entrypoint.py/pull/11))
+  ([#11](https://github.com/nekitdev/entrypoint/pull/11))
 
 ## 0.2.0 (2022-04-17)
 
 ### Internal
 
-- Migrate from module to library layout. ([#9](https://github.com/nekitdev/entrypoint.py/pull/9))
+- Migrate from module to library layout. ([#9](https://github.com/nekitdev/entrypoint/pull/9))
 
 ## 0.1.3 (2022-04-17)
 

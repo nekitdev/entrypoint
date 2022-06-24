@@ -1,9 +1,9 @@
-site_name: entrypoint.py
+site_name: entrypoint
 site_author: nekitdev
 site_description: Decorated functions as entry points.
 
-repo_name: nekitdev/entrypoint.py
-repo_url: https://github.com/nekitdev/entrypoint.py
+repo_name: nekitdev/entrypoint
+repo_url: https://github.com/nekitdev/entrypoint
 
 remote_branch: github-pages
 

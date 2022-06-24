@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "entrypoint.py"
+name = "entrypoint"
 version = "1.1.2"
 description = "Decorated functions as entry points."
 authors = ["nekitdev"]
@@ -7,11 +7,11 @@ license = "MIT"
 
 readme = "README.md"
 
-homepage = "https://github.com/nekitdev/entrypoint.py"
-repository = "https://github.com/nekitdev/entrypoint.py"
-documentation = "https://nekitdev.github.io/entrypoint.py"
+homepage = "https://github.com/nekitdev/entrypoint"
+repository = "https://github.com/nekitdev/entrypoint"
+documentation = "https://nekitdev.github.io/entrypoint"
 
-keywords = ["python", "entrypoint"]
+keywords = ["python", "entrypoint", "entry"]
 
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -26,7 +26,7 @@ include = ["CHANGELOG.md", "tests"]
 [tool.poetry.urls]
 Discord = "https://nekit.dev/discord"
 Funding = "https://patreon.com/nekitdev"
-Issues = "https://github.com/nekitdev/entrypoint.py/issues"
+Issues = "https://github.com/nekitdev/entrypoint/issues"
 
 [[tool.poetry.packages]]
 include = "entrypoint"
@@ -114,9 +114,9 @@ warn_redundant_casts = true
 warn_unused_ignores = false  # compatibility
 
 [tool.changelog]
-name = "entrypoint.py"
+name = "entrypoint"
 version = "1.1.2"
-url = "https://github.com/nekitdev/entrypoint.py"
+url = "https://github.com/nekitdev/entrypoint"
 directory = "changes"
 output = "CHANGELOG.md"
 
