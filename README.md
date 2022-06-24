@@ -50,7 +50,7 @@ Or directly specifying it in the configuration:
 
 ```toml
 [tool.poetry.dependencies]
-entrypoint = "^1.1.2"
+entrypoint = "^1.2.0"
 ```
 
 Alternatively, the latest version can be included, installing from source:

@@ -2,6 +2,12 @@
 
 <!-- changelog: start -->
 
+## 1.2.0 (2022-06-25)
+
+### Changes
+
+- `entrypoint.py -> entrypoint` migration. ([#20](https://github.com/nekitdev/entrypoint/pulls/20))
+
 ## 1.1.2 (2022-06-24)
 
 No significant changes.
