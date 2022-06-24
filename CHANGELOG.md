@@ -2,6 +2,16 @@
 
 <!-- changelog: start -->
 
+## 1.1.1 (2022-06-24)
+
+No significant changes.
+
+## 1.1.0 (2022-06-24)
+
+### Features
+
+- Add documentation.
+
 ## 1.0.1 (2022-06-21)
 
 No significant changes.
