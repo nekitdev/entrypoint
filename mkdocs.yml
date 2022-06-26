@@ -11,6 +11,10 @@ nav:
   - Index: "index.md"
   - Reference: "reference.md"
 
+watch:
+  - docs
+  - entrypoint
+
 theme:
   name: material
   palette:
