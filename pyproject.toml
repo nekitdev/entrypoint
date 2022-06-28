@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "entrypoint"
-version = "1.2.1"
+version = "1.2.2"
 description = "Decorated functions as entry points."
 authors = ["nekitdev"]
 license = "MIT"
@@ -115,7 +115,7 @@ warn_unused_ignores = false  # compatibility
 
 [tool.changelog]
 name = "entrypoint"
-version = "1.2.1"
+version = "1.2.2"
 url = "https://github.com/nekitdev/entrypoint"
 directory = "changes"
 output = "CHANGELOG.md"
