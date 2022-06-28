@@ -13,7 +13,14 @@ MAIN = "__main__"
 
 
 def is_main(name: str) -> bool:
-    """Checks if `name` equals `__main__`."""
+    """Checks if `name` equals `__main__`.
+
+    Arguments:
+        name: The name to check.
+
+    Returns:
+        Whether the `name` is equal to `__main__`.
+    """
     return name == MAIN
 
 
@@ -65,8 +72,8 @@ def entrypoint(
     then used to handle calls.
 
     Args:
-        name: `__name__` of the module
-        entrypoint_type: [`EntryPoint`][entrypoint.core.EntryPoint]
+        name: The `__name__` of the module
+        entrypoint_type: An [`EntryPoint`][entrypoint.core.EntryPoint]
             type that is used to handle calls.
 
     Returns:

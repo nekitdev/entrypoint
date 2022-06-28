@@ -10,6 +10,8 @@ remote_branch: github-pages
 nav:
   - Index: "index.md"
   - Reference: "reference.md"
+  - Changelog: "changelog.md"
+  - Security: "security.md"
 
 watch:
   - docs
@@ -44,6 +46,9 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          options:
+            members_order: source
+
           paths: [entrypoint]
 
           import:

@@ -24,7 +24,7 @@ abstracted away by this library.
 
 ### pip
 
-Installing with `pip` is quite simple:
+Installing the library with `pip` is quite simple:
 
 ```console
 $ pip install entrypoint
@@ -40,20 +40,20 @@ $ python -m pip install .
 
 ### poetry
 
-Adding `entrypoint` to dependencies:
+You can add `entrypoint` as a dependency with the following command:
 
 ```console
 $ poetry add entrypoint
 ```
 
-Or directly specifying it in the configuration:
+Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
 entrypoint = "^1.2.1"
 ```
 
-Alternatively, the latest version can be included, installing from source:
+Alternatively, you can add it directly from the source:
 
 ```toml
 [tool.poetry.dependencies.entrypoint]
@@ -64,7 +64,7 @@ git = "https://github.com/nekitdev/entrypoint.git"
 
 ### Decorated
 
-Declare `main` function as an *entry point*:
+Declare the `main` function as an *entry point*:
 
 ```python
 from entrypoint import entrypoint
@@ -90,7 +90,7 @@ When importing the module, `main` does not get called:
 
 ### Note
 
-Note that `main` gets called **immediately, before any code below can be executed**:
+Note that `main` gets called **immediately, before any code below can be executed**.
 
 ```python
 @entrypoint(__name__)
@@ -118,8 +118,8 @@ This method allows to take control over where and when the function gets called.
 
 ### Check
 
-The library also provides `is_main` function that resembles
-the common (and standard) way of implementing *entry points*:
+`entrypoint` also provides `is_main` function that resembles
+the common (and de-facto standard) way of implementing *entry points*:
 
 ```python
 from entrypoint import is_main
@@ -147,15 +147,20 @@ def main() -> None:
 
 ## Documentation
 
-Documentation is located [here][Documentation].
+You can find the documentation [here][Documentation].
 
 ## Support
 
-Please send an [email][Email] or refer to the official [Discord server][Discord] for support.
+If you need support with the library, you can send an [email][Email]
+or refer to the official [Discord server][Discord].
 
 ## Changelog
 
-Changelog can be found [here][Changelog].
+You can find the changelog [here][Changelog].
+
+## Security Policy
+
+You can find the Security Policy of `wraps` [here][Security].
 
 ## Contributing
 
