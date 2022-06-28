@@ -365,6 +365,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#security-policy" class="md-nav__link">
+    Security Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contributing" class="md-nav__link">
     Contributing
   </a>
@@ -396,6 +403,36 @@
     <li class="md-nav__item">
       <a href="reference/" class="md-nav__link">
         Reference
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security/" class="md-nav__link">
+        Security
       </a>
     </li>
   
@@ -524,6 +561,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#security-policy" class="md-nav__link">
+    Security Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contributing" class="md-nav__link">
     Contributing
   </a>
@@ -572,7 +616,7 @@ abstracted away by this library.</p>
 <h2 id="installing">Installing</h2>
 <p><strong>Python 3.7 or above is required.</strong></p>
 <h3 id="pip">pip</h3>
-<p>Installing with <code>pip</code> is quite simple:</p>
+<p>Installing the library with <code>pip</code> is quite simple:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>pip install entrypoint
 </code></pre></div>
 <p>Alternatively, the library can be installed from source:</p>
@@ -581,20 +625,20 @@ abstracted away by this library.</p>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gp">$ </span>python -m pip install .
 </code></pre></div>
 <h3 id="poetry">poetry</h3>
-<p>Adding <code>entrypoint</code> to dependencies:</p>
+<p>You can add <code>entrypoint</code> as a dependency with the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>poetry add entrypoint
 </code></pre></div>
-<p>Or directly specifying it in the configuration:</p>
+<p>Or by directly specifying it in the configuration like so:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[tool.poetry.dependencies]</span><span class="w"></span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">entrypoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^1.2.1&quot;</span><span class="w"></span>
 </code></pre></div>
-<p>Alternatively, the latest version can be included, installing from source:</p>
+<p>Alternatively, you can add it directly from the source:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[tool.poetry.dependencies.entrypoint]</span><span class="w"></span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://github.com/nekitdev/entrypoint.git&quot;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="examples">Examples</h2>
 <h3 id="decorated">Decorated</h3>
-<p>Declare <code>main</code> function as an <em>entry point</em>:</p>
+<p>Declare the <code>main</code> function as an <em>entry point</em>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">entrypoint</span> <span class="kn">import</span> <span class="n">entrypoint</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nd">@entrypoint</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
@@ -610,7 +654,7 @@ abstracted away by this library.</p>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="c1"># no output</span>
 </code></pre></div>
 <h3 id="note">Note</h3>
-<p>Note that <code>main</code> gets called <strong>immediately, before any code below can be executed</strong>:</p>
+<p>Note that <code>main</code> gets called <strong>immediately, before any code below can be executed</strong>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@entrypoint</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&gt; in main&quot;</span><span class="p">)</span>
@@ -627,8 +671,8 @@ abstracted away by this library.</p>
 </code></pre></div>
 <p>This method allows to take control over where and when the function gets called.</p>
 <h3 id="check">Check</h3>
-<p>The library also provides <code>is_main</code> function that resembles
-the common (and standard) way of implementing <em>entry points</em>:</p>
+<p><code>entrypoint</code> also provides <code>is_main</code> function that resembles
+the common (and de-facto standard) way of implementing <em>entry points</em>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">entrypoint</span> <span class="kn">import</span> <span class="n">is_main</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">if</span> <span class="n">is_main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">):</span>
@@ -647,11 +691,14 @@ the common (and standard) way of implementing <em>entry points</em>:</p>
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">async_main</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="documentation">Documentation</h2>
-<p>Documentation is located <a href="https://nekitdev.github.io/entrypoint">here</a>.</p>
+<p>You can find the documentation <a href="https://nekitdev.github.io/entrypoint">here</a>.</p>
 <h2 id="support">Support</h2>
-<p>Please send an <a href="mailto:support@nekit.dev">email</a> or refer to the official <a href="https://nekit.dev/discord">Discord server</a> for support.</p>
+<p>If you need support with the library, you can send an <a href="mailto:support@nekit.dev">email</a>
+or refer to the official <a href="https://nekit.dev/discord">Discord server</a>.</p>
 <h2 id="changelog">Changelog</h2>
-<p>Changelog can be found <a href="https://github.com/nekitdev/entrypoint/blob/main/CHANGELOG.md">here</a>.</p>
+<p>You can find the changelog <a href="https://github.com/nekitdev/entrypoint/blob/main/CHANGELOG.md">here</a>.</p>
+<h2 id="security-policy">Security Policy</h2>
+<p>You can find the Security Policy of <code>wraps</code> <a href="https://github.com/nekitdev/entrypoint/blob/main/SECURITY.md">here</a>.</p>
 <h2 id="contributing">Contributing</h2>
 <p>If you are interested in contributing to <code>entrypoint</code>, make sure to take a look at the
 <a href="https://github.com/nekitdev/entrypoint/blob/main/CONTRIBUTING.md">Contributing Guide</a>, as well as the <a href="https://github.com/nekitdev/entrypoint/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
