@@ -2,6 +2,10 @@
 
 <!-- changelog: start -->
 
+## 1.2.4 (2022-06-29)
+
+No significant changes.
+
 ## 1.2.3 (2022-06-28)
 
 No significant changes.
