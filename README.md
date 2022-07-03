@@ -193,8 +193,7 @@ If you are interested in contributing to `entrypoint`, make sure to take a look 
 [Version Badge]: https://img.shields.io/pypi/v/entrypoint
 [Downloads Badge]: https://img.shields.io/pypi/dm/entrypoint
 
-[Documentation Badge]: https://img.shields.io/badge/docs-material-blue
-
+[Documentation Badge]: https://github.com/nekitdev/entrypoint/workflows/docs/badge.svg
 [Check Badge]: https://github.com/nekitdev/entrypoint/workflows/check/badge.svg
 [Test Badge]: https://github.com/nekitdev/entrypoint/workflows/test/badge.svg
 [Coverage Badge]: https://codecov.io/gh/nekitdev/entrypoint/branch/main/graph/badge.svg
