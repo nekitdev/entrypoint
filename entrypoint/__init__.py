@@ -28,7 +28,7 @@ __url__ = "https://github.com/nekitdev/entrypoint"
 __title__ = "entrypoint"
 __author__ = "nekitdev"
 __license__ = "MIT"
-__version__ = "1.2.4"
+__version__ = "1.2.5"
 
 from entrypoint.core import MAIN, EntryPoint, entrypoint, is_main
 
