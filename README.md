@@ -50,7 +50,7 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-entrypoint = "^1.2.6"
+entrypoint = "^1.3.0"
 ```
 
 Alternatively, you can add it directly from the source:
@@ -160,7 +160,7 @@ You can find the changelog [here][Changelog].
 
 ## Security Policy
 
-You can find the Security Policy of `wraps` [here][Security].
+You can find the Security Policy of `entrypoint` [here][Security].
 
 ## Contributing
 
