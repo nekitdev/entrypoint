@@ -21,8 +21,6 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-include = ["CHANGELOG.md", "tests"]
-
 [tool.poetry.urls]
 Discord = "https://nekit.dev/discord"
 Funding = "https://patreon.com/nekitdev"
