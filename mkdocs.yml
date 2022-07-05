@@ -57,8 +57,7 @@ plugins:
             - https://docs.python.org/3/objects.inv
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
+  - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
