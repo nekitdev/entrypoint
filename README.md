@@ -10,7 +10,7 @@
 [![Test][Test Badge]][Actions]
 [![Coverage][Coverage Badge]][Coverage]
 
-**Decorated functions as entry points.**
+*Decorated functions as entry points.*
 
 In python, an *entry point* can be thought of as an explicit function
 that gets called when the script is run directly from the console.
