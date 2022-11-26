@@ -1,13 +1,17 @@
-from typing import Any, Callable, Type, TypeVar, overload
+from typing import Any, Type, TypeVar, overload
+
+from typing_aliases import Nullary
 
 __all__ = ("MAIN", "EntryPoint", "entrypoint", "is_main")
 
 R = TypeVar("R")
 
-Main = Callable[[], R]
+Main = Nullary[R]
+
+AnyMain = Main[Any]
 
 # XXX: change to M[R] if/when HKTs get added?
-M = TypeVar("M", bound=Main[Any])
+M = TypeVar("M", bound=AnyMain)
 
 MAIN = "__main__"
 

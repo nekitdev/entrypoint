@@ -2,6 +2,13 @@
 
 <!-- changelogging: start -->
 
+## 1.3.1 (2022-11-26)
+
+### Internal
+
+- `entrypoint` now depends on the [`typing-aliases`](https://github.com/nekitdev/typing-aliases)
+  package.
+
 ## 1.3.0 (2022-07-06)
 
 No significant changes.
