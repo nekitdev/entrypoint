@@ -490,7 +490,7 @@
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">file</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># no output</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python file.py
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python<span class="w"> </span>file.py
 <span class="go">Hello, world!</span>
 </code></pre></div>
 
@@ -542,7 +542,7 @@
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EntryPoint</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
@@ -651,7 +651,7 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_main</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Checks if `name` equals `__main__`.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if `name` equals `__main__`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        name: The name to check.</span>
@@ -766,7 +766,7 @@ type that is used to handle calls.</p></td>
 <span class="normal">82</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">entrypoint</span><span class="p">(</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entrypoint_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">EntryPoint</span><span class="p">]</span> <span class="o">=</span> <span class="n">EntryPoint</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EntryPoint</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Defines decorated functions as entry points.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Defines decorated functions as entry points.</span>
 
 <span class="sd">    Calls the wrapped function if the module gets run directly.</span>
 
