@@ -2,6 +2,22 @@
 
 <!-- changelogging: start -->
 
+## 1.4.0 (2023-04-16)
+
+### Changes
+
+- `entrypoint` now uses `attrs` under the hood.
+
+### Features
+
+- `Main` type alias is now exported from `entrypoint`:
+
+  ```python
+  Main = Callable[[], None]
+  ```
+
+  Note that this ensures `main` functions do not return anything at type-checking time.
+
 ## 1.3.0 (2022-07-06)
 
 No significant changes.
@@ -66,7 +82,7 @@ No significant changes.
 
 ### Changes
 
-- Export the following constant:
+- Exported the following constant:
 
   ```python
   MAIN = "__main__"
@@ -79,7 +95,7 @@ No significant changes.
 
 ### Internal
 
-- Migrate from module to library layout. ([#9](https://github.com/nekitdev/entrypoint/pull/9))
+- Migrated from module to library layout. ([#9](https://github.com/nekitdev/entrypoint/pull/9))
 
 ## 0.1.3 (2022-04-17)
 

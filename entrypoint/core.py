@@ -1,19 +1,20 @@
-from typing import Any, Callable, Type, TypeVar, overload
+from typing import Callable, Type, TypeVar, overload
 
-__all__ = ("MAIN", "EntryPoint", "entrypoint", "is_main")
+from attrs import frozen
 
-R = TypeVar("R")
+__all__ = ("MAIN", "Main", "EntryPoint", "entrypoint", "is_main")
 
-Main = Callable[[], R]
+Main = Callable[[], None]
+"""The `main` function that does not return anything."""
 
-# XXX: change to M[R] if/when HKTs get added?
-M = TypeVar("M", bound=Main[Any])
+M = TypeVar("M", bound=Main)
 
 MAIN = "__main__"
+"""The `__main__` name constant."""
 
 
 def is_main(name: str) -> bool:
-    """Checks if `name` equals `__main__`.
+    """Checks if the `name` is equal to `__main__`.
 
     Arguments:
         name: The name to check.
@@ -24,15 +25,11 @@ def is_main(name: str) -> bool:
     return name == MAIN
 
 
+@frozen()
 class EntryPoint:
-    """Handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators."""
+    """Represents handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators."""
 
-    def __init__(self, name: str) -> None:
-        self._name = name
-
-    @property
-    def name(self) -> str:
-        return self._name
+    name: str
 
     def call(self, main: M) -> M:
         if is_main(self.name):
@@ -57,9 +54,7 @@ def entrypoint(name: str, entrypoint_type: Type[EP]) -> EP:
     ...
 
 
-def entrypoint(
-    name: str, entrypoint_type: Type[EntryPoint] = EntryPoint
-) -> EntryPoint:
+def entrypoint(name: str, entrypoint_type: Type[EntryPoint] = EntryPoint) -> EntryPoint:
     """Defines decorated functions as entry points.
 
     Calls the wrapped function if the module gets run directly.
@@ -72,11 +67,11 @@ def entrypoint(
     then used to handle calls.
 
     Args:
-        name: The `__name__` of the module
-        entrypoint_type: An [`EntryPoint`][entrypoint.core.EntryPoint]
+        name: The `__name__` of the module.
+        entrypoint_type: The [`EntryPoint`][entrypoint.core.EntryPoint]
             type that is used to handle calls.
 
     Returns:
-        An [`EntryPoint`][entrypoint.core.EntryPoint] instance.
+        The created [`EntryPoint`][entrypoint.core.EntryPoint] instance.
     """
     return entrypoint_type(name)

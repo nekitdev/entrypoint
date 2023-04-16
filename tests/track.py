@@ -3,37 +3,30 @@ from __future__ import annotations
 from types import TracebackType as Traceback
 from typing import Any, Callable, Generic, Optional, Type, TypeVar
 
+from attrs import define
 from typing_extensions import ParamSpec, TypeAlias
 
 __all__ = ("Track", "track")
 
-AnyException: TypeAlias = BaseException
+AnyError: TypeAlias = BaseException
 
-E = TypeVar("E", bound=AnyException)
+DEFAULT_COUNT = 0
+
+E = TypeVar("E", bound=AnyError)
 
 P = ParamSpec("P")
 R = TypeVar("R")
 
-T = TypeVar("T", bound="Track[Any, Any]")
+T = TypeVar("T", bound="Track[..., Any]")
 
 
+@define()
 class Track(Generic[P, R]):
-    def __init__(self, function: Callable[P, R]) -> None:
-        self._function = function
-        self._count = 0
-        self._saved = 0
+    """Tracks function calls."""
 
-    @property
-    def count(self) -> int:
-        return self._count
-
-    @property
-    def saved(self) -> int:
-        return self._saved
-
-    @property
-    def function(self) -> Callable[P, R]:
-        return self._function
+    function: Callable[P, R]
+    count: int = DEFAULT_COUNT
+    saved: int = DEFAULT_COUNT
 
     def called(self) -> bool:
         return self.count > 0
@@ -45,16 +38,16 @@ class Track(Generic[P, R]):
         return not self.called()
 
     def increment(self) -> None:
-        self._count += 1
+        self.count += 1
 
     def reset(self) -> None:
-        self._count = 0
+        self.count = 0
 
     def save(self) -> None:
-        self._saved = self._count
+        self.saved = self.count
 
     def load(self) -> None:
-        self._count = self._saved
+        self.count = self.saved
 
     def __call__(self, *args: P.args, **kwargs: P.kwargs) -> R:
         self.increment()
@@ -67,15 +60,9 @@ class Track(Generic[P, R]):
         return self
 
     def __exit__(
-        self,
-        error: Optional[E],
-        type: Optional[Type[E]],
-        traceback: Optional[Traceback],
+        self, error: Optional[E], type: Optional[Type[E]], traceback: Optional[Traceback]
     ) -> None:
         self.load()
-
-
-# XXX: change to T[F[P, R]] if/when HKTs get added?
 
 
 def track(function: Callable[P, R]) -> Track[P, R]:

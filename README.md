@@ -50,7 +50,7 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-entrypoint = "^1.3.0"
+entrypoint = "^1.4.0"
 ```
 
 Alternatively, you can add it directly from the source:
@@ -128,6 +128,11 @@ if is_main(__name__):
     print("Hello, world!")
 ```
 
+### Return
+
+`entrypoint` expects `main` functions to not return anything. Even though this is *not* checked
+at *runtime*, returning from `main` will cause *type-checkers* to *error*!
+
 ### Async
 
 `entrypoint` does not provide any specific functionality to run async functions.
@@ -135,14 +140,14 @@ if is_main(__name__):
 Instead, you can specify, for example, a `main` function that runs its `async_main` counterpart:
 
 ```python
-import asyncio
+from async_extensions import run
 
 async def async_main() -> None:
     print("Hello, world!")
 
 @entrypoint(__name__)
 def main() -> None:
-    asyncio.run(async_main())
+    run(async_main())
 ```
 
 ## Documentation
