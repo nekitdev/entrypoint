@@ -334,6 +334,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    Return
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#async" class="md-nav__link">
     Async
   </a>
@@ -560,6 +567,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    Return
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#async" class="md-nav__link">
     Async
   </a>
@@ -666,7 +680,7 @@ abstracted away by this library.</p>
 </code></pre></div>
 <p>Or by directly specifying it in the configuration like so:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.poetry.dependencies]</span>
-<span class="n">entrypoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^1.3.0&quot;</span>
+<span class="n">entrypoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^1.4.0&quot;</span>
 </code></pre></div>
 <p>Alternatively, you can add it directly from the source:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.poetry.dependencies.entrypoint]</span>
@@ -714,17 +728,20 @@ the common (and de-facto standard) way of implementing <em>entry points</em>:</p
 <span class="k">if</span> <span class="n">is_main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="return">Return</h3>
+<p><code>entrypoint</code> expects <code>main</code> functions to not return anything. Even though this is <em>not</em> checked
+at <em>runtime</em>, returning from <code>main</code> will cause <em>type-checkers</em> to <em>error</em>!</p>
 <h3 id="async">Async</h3>
 <p><code>entrypoint</code> does not provide any specific functionality to run async functions.</p>
 <p>Instead, you can specify, for example, a <code>main</code> function that runs its <code>async_main</code> counterpart:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">async_extensions</span> <span class="kn">import</span> <span class="n">run</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">async_main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 
 <span class="nd">@entrypoint</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">async_main</span><span class="p">())</span>
+    <span class="n">run</span><span class="p">(</span><span class="n">async_main</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="documentation">Documentation</h2>
 <p>You can find the documentation <a href="https://nekitdev.github.io/entrypoint">here</a>.</p>

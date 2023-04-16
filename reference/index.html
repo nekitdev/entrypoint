@@ -300,6 +300,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entrypoint.Main" class="md-nav__link">
+    Main
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrypoint.MAIN" class="md-nav__link">
+    MAIN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#entrypoint.EntryPoint" class="md-nav__link">
     EntryPoint
   </a>
@@ -429,6 +443,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entrypoint.Main" class="md-nav__link">
+    Main
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrypoint.MAIN" class="md-nav__link">
+    MAIN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#entrypoint.EntryPoint" class="md-nav__link">
     EntryPoint
   </a>
@@ -504,6 +532,48 @@
 
 
 
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="entrypoint.Main" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">Main</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="kc">None</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The <code>main</code> function that does not return anything.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="entrypoint.MAIN" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MAIN</span> <span class="o">=</span> <span class="s1">&#39;__main__&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The <code>__main__</code> name constant.</p>
+  </div>
+
+</div>
+
 
 <div class="doc doc-object doc-class">
 
@@ -519,13 +589,12 @@
   <div class="doc doc-contents ">
 
   
-      <p>Handlers for <a class="autorefs autorefs-internal" href="#entrypoint.entrypoint"><code>@entrypoint</code></a> decorators.</p>
+      <p>Represents handlers for <a class="autorefs autorefs-internal" href="#entrypoint.entrypoint"><code>@entrypoint</code></a> decorators.</p>
 
 
         <details class="quote">
           <summary>Source code in <code>entrypoint/core.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
-<span class="normal">28</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
@@ -538,18 +607,11 @@
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EntryPoint</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators.&quot;&quot;&quot;</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@frozen</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">EntryPoint</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 
     <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main</span><span class="p">:</span> <span class="n">M</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">M</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">is_main</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
@@ -595,7 +657,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Checks if <code>name</code> equals <code>__main__</code>.</p>
+      <p>Checks if the <code>name</code> is equal to <code>__main__</code>.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -641,8 +703,7 @@
 
       <details class="quote">
         <summary>Source code in <code>entrypoint/core.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
-<span class="normal">16</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
@@ -650,8 +711,9 @@
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_main</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if `name` equals `__main__`.</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_main</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the `name` is equal to `__main__`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        name: The name to check.</span>
@@ -702,7 +764,7 @@ then used to handle calls.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>The <code>__name__</code> of the module</p></td>
+          <td><p>The <code>__name__</code> of the module.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -712,7 +774,7 @@ then used to handle calls.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Type" href="https://docs.python.org/3/library/typing.html#typing.Type">Type</a>[<a class="autorefs autorefs-internal" title="entrypoint.core.EntryPoint" href="#entrypoint.EntryPoint">EntryPoint</a>]</code>
           </td>
-          <td><p>An <a class="autorefs autorefs-internal" href="#entrypoint.EntryPoint"><code>EntryPoint</code></a>
+          <td><p>The <a class="autorefs autorefs-internal" href="#entrypoint.EntryPoint"><code>EntryPoint</code></a>
 type that is used to handle calls.</p></td>
           <td>
                 <code>EntryPoint</code>
@@ -734,14 +796,17 @@ type that is used to handle calls.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="entrypoint.core.EntryPoint" href="#entrypoint.EntryPoint">EntryPoint</a></code>
           </td>
-          <td><p>An <a class="autorefs autorefs-internal" href="#entrypoint.EntryPoint"><code>EntryPoint</code></a> instance.</p></td>
+          <td><p>The created <a class="autorefs autorefs-internal" href="#entrypoint.EntryPoint"><code>EntryPoint</code></a> instance.</p></td>
         </tr>
     </tbody>
   </table>
 
       <details class="quote">
         <summary>Source code in <code>entrypoint/core.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
@@ -758,14 +823,7 @@ type that is used to handle calls.</p></td>
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">entrypoint</span><span class="p">(</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entrypoint_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">EntryPoint</span><span class="p">]</span> <span class="o">=</span> <span class="n">EntryPoint</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EntryPoint</span><span class="p">:</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">entrypoint</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entrypoint_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">EntryPoint</span><span class="p">]</span> <span class="o">=</span> <span class="n">EntryPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EntryPoint</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Defines decorated functions as entry points.</span>
 
 <span class="sd">    Calls the wrapped function if the module gets run directly.</span>
@@ -778,12 +836,12 @@ type that is used to handle calls.</p></td>
 <span class="sd">    then used to handle calls.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        name: The `__name__` of the module</span>
-<span class="sd">        entrypoint_type: An [`EntryPoint`][entrypoint.core.EntryPoint]</span>
+<span class="sd">        name: The `__name__` of the module.</span>
+<span class="sd">        entrypoint_type: The [`EntryPoint`][entrypoint.core.EntryPoint]</span>
 <span class="sd">            type that is used to handle calls.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        An [`EntryPoint`][entrypoint.core.EntryPoint] instance.</span>
+<span class="sd">        The created [`EntryPoint`][entrypoint.core.EntryPoint] instance.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">entrypoint_type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
