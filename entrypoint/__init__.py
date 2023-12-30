@@ -26,7 +26,7 @@ __description__ = "Decorated functions as entry points."
 __url__ = "https://github.com/nekitdev/entrypoint"
 
 __title__ = "entrypoint"
-__author__ = "nekitdev"
+__author__ = "nekitdev, bswck"
 __license__ = "MIT"
 __version__ = "1.4.0"
 
