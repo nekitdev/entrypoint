@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import TYPE_CHECKING, Protocol, TypeVar
 
-from named import get_module
+from named import Moduled, get_module
 
 if TYPE_CHECKING:
     from typing_extensions import ParamSpec
@@ -12,9 +12,7 @@ if TYPE_CHECKING:
     _R = TypeVar("_R")
     _R_co = TypeVar("_R_co", covariant=True)
 
-    class _EntrypointFunction(Protocol[_P, _R_co]):  # pragma: no cover
-        __module__: str
-
+    class _EntrypointFunction(Protocol[_P, _R_co], Moduled):  # pragma: no cover
         def __call__(self, *args: _P.args, **kwargs: _P.kwargs) -> _R_co:
             ...
 
