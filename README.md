@@ -69,7 +69,7 @@ Declare the `main` function as an *entry point*:
 ```python
 from entrypoint import entrypoint
 
-@entrypoint(__name__)
+@entrypoint
 def main() -> None:
     print("Hello, world!")
 ```
@@ -93,7 +93,7 @@ When importing the module, `main` does not get called:
 Note that `main` gets called **immediately, before any code below can be executed**.
 
 ```python
-@entrypoint(__name__)
+@entrypoint
 def main() -> None:
     print("-> in main")
 
@@ -111,27 +111,50 @@ $ python note.py
 It is possible to run `main` directly:
 
 ```python
-entrypoint(__name__).call(main)
+entrypoint(main)
 ```
 
 This method allows to take control over where and when the function gets called.
 
 ### Check
 
-`entrypoint` also provides `is_main` function that resembles
-the common (and de-facto standard) way of implementing *entry points*:
+`entrypoint` also provides a `MAIN` constant that stores
+the common (and de-facto standard) comparison string for implementing *entry points*:
 
 ```python
-from entrypoint import is_main
+from entrypoint import MAIN
 
-if is_main(__name__):
+if __name__ == MAIN:
     print("Hello, world!")
 ```
 
-### Return
+### Type Safety
 
-`entrypoint` expects `main` functions to not return anything. Even though this is *not* checked
-at *runtime*, returning from `main` will cause *type-checkers* to *error*!
+`entrypoint` preserves the signatures and return types of functions decorated with `@entrypoint`.
+Decorating your function does not change how it is visible to the type checker _as a callable_—mypy example:
+
+```python
+"""A program that counts its arguments."""
+
+from __future__ import annotations
+
+from sys import argv
+
+from entrypoint import entrypoint
+
+
+@entrypoint
+def argc(args: list[str] | None = None) -> None:
+    if args is None:
+        args = argv[1:]
+    print(len(args))
+
+
+reveal_type(argc)
+# Revealed type is "def (args: Union[builtins.list[builtins.str], None] =)"
+
+```
+
 
 ### Async
 
@@ -145,7 +168,7 @@ from async_extensions import run
 async def async_main() -> None:
     print("Hello, world!")
 
-@entrypoint(__name__)
+@entrypoint
 def main() -> None:
     run(async_main())
 ```
