@@ -30,7 +30,7 @@ def entrypoint(main: _EntrypointFunction[_P, _R]) -> Callable[_P, _R]:
         main: The function to be run as an entrypoint to the program.
 
     Returns:
-        The created [`EntryPoint`][entrypoint.core.EntryPoint] instance.
+        The same function, unchanged.
     """
     if get_module(main) == MAIN:
         main()
