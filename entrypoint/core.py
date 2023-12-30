@@ -1,77 +1,39 @@
-from typing import Callable, Type, TypeVar, overload
+from __future__ import annotations
 
-from attrs import frozen
+from collections.abc import Callable
+from typing import TYPE_CHECKING, Protocol, TypeVar
 
-__all__ = ("MAIN", "Main", "EntryPoint", "entrypoint", "is_main")
+from named import get_module
 
-Main = Callable[[], None]
-"""The `main` function that does not return anything."""
+if TYPE_CHECKING:
+    from typing_extensions import ParamSpec
 
-M = TypeVar("M", bound=Main)
+    _P = ParamSpec("_P")
+    _R = TypeVar("_R")
+    _R_co = TypeVar("_R_co", covariant=True)
+
+    class _EntrypointFunction(Protocol[_P, _R_co]):  # pragma: no cover
+        __module__: str
+
+        def __call__(self, *args: _P.args, **kwargs: _P.kwargs) -> _R_co:
+            ...
+
 
 MAIN = "__main__"
 """The `__main__` name constant."""
 
 
-def is_main(name: str) -> bool:
-    """Checks if the `name` is equal to `__main__`.
-
-    Arguments:
-        name: The name to check.
-
-    Returns:
-        Whether the `name` is equal to `__main__`.
-    """
-    return name == MAIN
-
-
-@frozen()
-class EntryPoint:
-    """Represents handlers for [`@entrypoint`][entrypoint.core.entrypoint] decorators."""
-
-    name: str
-
-    def call(self, main: M) -> M:
-        if is_main(self.name):
-            main()
-
-        return main
-
-    def __call__(self, main: M) -> M:
-        return self.call(main)
-
-
-EP = TypeVar("EP", bound=EntryPoint)
-
-
-@overload
-def entrypoint(name: str) -> EntryPoint:
-    ...
-
-
-@overload
-def entrypoint(name: str, entrypoint_type: Type[EP]) -> EP:
-    ...
-
-
-def entrypoint(name: str, entrypoint_type: Type[EntryPoint] = EntryPoint) -> EntryPoint:
+def entrypoint(main: _EntrypointFunction[_P, _R]) -> Callable[_P, _R]:
     """Defines decorated functions as entry points.
 
-    Calls the wrapped function if the module gets run directly.
-
-    Instead of applying dark magic, this function expects
-    callers to pass the `__name__` variable as an argument,
-    and merely checks it against `__main__` when needed.
-
-    `entrypoint_type(name)` is created under the hood, and is
-    then used to handle calls.
+    Calls the wrapped function if the module it is defined in is run directly.
 
     Args:
-        name: The `__name__` of the module.
-        entrypoint_type: The [`EntryPoint`][entrypoint.core.EntryPoint]
-            type that is used to handle calls.
+        main: The function to be run as an entrypoint to the program.
 
     Returns:
         The created [`EntryPoint`][entrypoint.core.EntryPoint] instance.
     """
-    return entrypoint_type(name)
+    if get_module(main) == MAIN:
+        main()
+    return main

@@ -6,7 +6,7 @@
 # file.py
 from entrypoint import entrypoint
 
-@entrypoint(__name__)
+@entrypoint
 def main() -> None:
     print("Hello, world!")
 ```
@@ -30,6 +30,6 @@ __author__ = "nekitdev"
 __license__ = "MIT"
 __version__ = "1.4.0"
 
-from entrypoint.core import MAIN, EntryPoint, Main, entrypoint, is_main
+from entrypoint.core import MAIN, entrypoint
 
-__all__ = ("MAIN", "Main", "EntryPoint", "entrypoint", "is_main")
+__all__ = ("MAIN", "entrypoint")
