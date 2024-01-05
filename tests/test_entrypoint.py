@@ -1,8 +1,13 @@
-from entrypoint import entrypoint, is_main
-from tests.track import track
+from runpy import run_module
+
+from entrypoint import is_main
+
+CALLED = "CALLED"
 
 MAIN = "__main__"
 TEST = "__test__"
+
+MODULE = "tests.module"
 
 
 def test_is_main() -> None:
@@ -10,23 +15,11 @@ def test_is_main() -> None:
     assert not is_main(TEST)
 
 
-entrypoint_call = entrypoint(MAIN)
-entrypoint_no_call = entrypoint(TEST)
+def test_entrypoint() -> None:
+    main = run_module(MODULE, run_name=MAIN)
 
+    assert main[CALLED] == 1
 
-def main() -> None:
-    pass
+    test = run_module(MODULE, run_name=TEST)
 
-
-def test_call() -> None:
-    with track(main) as tracked:
-        entrypoint_call(tracked)
-
-        assert tracked.called_once()
-
-
-def test_no_call() -> None:
-    with track(main) as tracked:
-        entrypoint_no_call(tracked)
-
-        assert tracked.not_called()
+    assert test[CALLED] == 0
