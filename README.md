@@ -20,7 +20,7 @@ abstracted away by this library.
 
 ## Installing
 
-**Python 3.7 or above is required.**
+**Python 3.8 or above is required.**
 
 ### pip
 
@@ -50,7 +50,7 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-entrypoint = "^1.4.0"
+entrypoint = "^2.0.0"
 ```
 
 Alternatively, you can add it directly from the source:
@@ -130,8 +130,9 @@ if is_main(__name__):
 
 ### Return
 
-`entrypoint` expects `main` functions to not return anything. Even though this is *not* checked
-at *runtime*, returning from `main` will cause *type-checkers* to *error*!
+`entrypoint` expects `main` functions to not have arguments and return nothing.
+Even though this is *not* checked at *runtime*, returning from `main` will cause
+*type-checkers* to *error*!
 
 ### Async
 
@@ -149,6 +150,20 @@ async def async_main() -> None:
 def main() -> None:
     run(async_main())
 ```
+
+### Implicit
+
+In case an entry point gets created without `__name__` given, it is going to attempt
+to fetch the module from the `main` function provided.
+
+```python
+@entrypoint()
+def main() -> None:
+    print("Hello, world!")
+```
+
+Please keep in mind that calling functions defined outside the `__main__` module
+will not work with implicit fetching.
 
 ## Documentation
 
