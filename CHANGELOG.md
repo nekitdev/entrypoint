@@ -2,6 +2,17 @@
 
 <!-- changelogging: start -->
 
+## 2.0.0 (2024-01-05)
+
+### Features
+
+- Allow defining entry points implicitly (without providing the `__name__`).
+  The name will instead be fetched from the `__module__` of the function provided.
+
+### Changes
+
+- `entrypoint` now uses `named` and `typing-aliases` under the hood.
+
 ## 1.4.0 (2023-04-16)
 
 ### Changes

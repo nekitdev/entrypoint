@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 from types import TracebackType as Traceback
-from typing import Any, Callable, Generic, Optional, Type, TypeVar
+from typing import Callable, Generic, Optional, Type, TypeVar, final
 
 from attrs import define
-from typing_extensions import ParamSpec, TypeAlias
+from typing_aliases import AnyError
+from typing_extensions import ParamSpec, Self
 
 __all__ = ("Track", "track")
-
-AnyError: TypeAlias = BaseException
 
 DEFAULT_COUNT = 0
 
@@ -17,9 +16,8 @@ E = TypeVar("E", bound=AnyError)
 P = ParamSpec("P")
 R = TypeVar("R")
 
-T = TypeVar("T", bound="Track[..., Any]")
 
-
+@final
 @define()
 class Track(Generic[P, R]):
     """Tracks function calls."""
@@ -54,7 +52,7 @@ class Track(Generic[P, R]):
 
         return self.function(*args, **kwargs)
 
-    def __enter__(self: T) -> T:
+    def __enter__(self) -> Self:
         self.save()
 
         return self
