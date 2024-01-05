@@ -25,10 +25,10 @@
 - `Main` type alias is now exported from `entrypoint`:
 
   ```python
-  Main = Callable[[], None]
+  Main = Nullary[None]
   ```
 
-  Note that this ensures `main` functions do not return anything at type-checking time.
+  This ensures `main` functions do not take arguments and return nothing at type-checking time.
 
 ## 1.3.0 (2022-07-06)
 
