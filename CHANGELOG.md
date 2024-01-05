@@ -8,6 +8,7 @@
 
 - Allow defining entry points implicitly (without providing the `__name__`).
   The name will instead be fetched from the `__module__` of the function provided.
+  ([#69](https://github.com/nekitdev/entrypoint/pull/69))
 
 ### Changes
 
