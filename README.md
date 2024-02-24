@@ -50,7 +50,7 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-entrypoint = "^2.0.0"
+entrypoint = "^2.0.1"
 ```
 
 Alternatively, you can add it directly from the source:
@@ -193,7 +193,7 @@ If you are interested in contributing to `entrypoint`, make sure to take a look 
 
 [Email]: mailto:support@nekit.dev
 
-[Discord]: https://nekit.dev/discord
+[Discord]: https://nekit.dev/chat
 
 [Actions]: https://github.com/nekitdev/entrypoint/actions
 
@@ -208,7 +208,7 @@ If you are interested in contributing to `entrypoint`, make sure to take a look 
 [Coverage]: https://codecov.io/gh/nekitdev/entrypoint
 [Documentation]: https://nekitdev.github.io/entrypoint
 
-[Discord Badge]: https://img.shields.io/badge/chat-discord-5865f2
+[Discord Badge]: https://img.shields.io/discord/728012506899021874
 [License Badge]: https://img.shields.io/pypi/l/entrypoint
 [Version Badge]: https://img.shields.io/pypi/v/entrypoint
 [Downloads Badge]: https://img.shields.io/pypi/dm/entrypoint

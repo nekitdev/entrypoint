@@ -2,6 +2,10 @@
 
 <!-- changelogging: start -->
 
+## 2.0.1 (2024-02-24)
+
+No significant changes.
+
 ## 2.0.0 (2024-01-05)
 
 ### Features
