@@ -50,7 +50,7 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-entrypoint = "^2.0.1"
+entrypoint = "^2.0.2"
 ```
 
 Alternatively, you can add it directly from the source:
