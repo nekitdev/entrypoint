@@ -43,6 +43,10 @@ ruff = "0.2.2"
 [tool.poetry.group.check.dependencies]
 mypy = "1.8.0"
 
+[tool.poetry.group.check.dependencies.pre-commit]
+version = "3.6.2"
+python = ">= 3.9"
+
 [tool.poetry.group.test.dependencies]
 coverage = "7.4.3"
 pytest = "8.0.1"
