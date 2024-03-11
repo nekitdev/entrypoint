@@ -38,7 +38,7 @@ named = ">= 1.4.1"
 typing-aliases = ">= 1.7.1"
 
 [tool.poetry.group.format.dependencies]
-ruff = "0.2.2"
+ruff = "0.3.2"
 
 [tool.poetry.group.check.dependencies]
 mypy = "1.8.0"
