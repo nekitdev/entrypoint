@@ -2,6 +2,12 @@
 
 <!-- changelogging: start -->
 
+## 2.0.3 (2024-03-15)
+
+### Internal
+
+- Bumped dependencies.
+
 ## 2.0.2 (2024-02-26)
 
 No significant changes.
